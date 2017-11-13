@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SICOR</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Noticias</string>
+    <string name="title_notifications">Citas</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="continue_button">Ingresar</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
