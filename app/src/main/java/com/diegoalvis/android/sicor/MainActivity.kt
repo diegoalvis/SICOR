@@ -5,14 +5,16 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
-import com.diegoalvis.android.sicor.R.id.viewPager
-
-
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var prevMenuItem: MenuItem
+
+    var homeFragment = HomeFragment()
+    var newsFragment = NewsFragment()
+    var notificationFragment = NotificationsFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +26,10 @@ class MainActivity : AppCompatActivity() {
             when (item.getItemId()) {
                 R.id.navigation_home -> viewPager.currentItem = 0
                 R.id.navigation_dashboard -> viewPager.currentItem = 1
-                R.id.navigation_notifications -> viewPager.currentItem = 2
+                R.id.navigation_notifications -> {
+                    viewPager.currentItem = 2
+                    notificationFragment.setData()
+                }
             }
             false
         }
@@ -38,11 +43,15 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-                prevMenuItem?.setChecked(false)
+                prevMenuItem.setChecked(false)
                 bottomNavigation.getMenu().getItem(0).setChecked(false)
 
                 bottomNavigation.getMenu().getItem(position).setChecked(true)
                 prevMenuItem = bottomNavigation.getMenu().getItem(position)
+
+                if (position == 2)
+                    notificationFragment.setData()
+
             }
 
             override fun onPageScrollStateChanged(state: Int) {
@@ -56,11 +65,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        var homeFragment = HomeFragment()
-        var newsFragment = NewsFragment()
 
-        adapter.addFragment(newsFragment)
         adapter.addFragment(homeFragment)
+        adapter.addFragment(newsFragment)
+        adapter.addFragment(notificationFragment)
 
         viewPager.adapter = adapter
     }

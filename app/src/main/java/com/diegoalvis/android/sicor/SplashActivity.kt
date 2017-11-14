@@ -36,7 +36,10 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun launchMainActivity() {
-        textNameApp.postDelayed({ startActivity(Intent(this, MainActivity::class.java)) }, 1000)
+        textNameApp.postDelayed({
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                            }, 1000)
     }
 
 }

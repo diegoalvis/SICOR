@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1013515450561",
+    "firebase_url": "https://sicor-6118d.firebaseio.com",
+    "project_id": "sicor-6118d",
+    "storage_bucket": "sicor-6118d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013515450561:android:5a99c7f41c64017a",
+        "android_client_info": {
+          "package_name": "com.diegoalvis.android.sicor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013515450561-7df3crlgatcihgophk27hmgedbt0m8ov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diegoalvis.android.sicor",
+            "certificate_hash": "e157e0bf7c268c9af78ed68cc36968b3cf3820ad"
+          }
+        },
+        {
+          "client_id": "1013515450561-om1e5pul56jjuaun580gpf4o4esmr8nv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5-R6R69_-Mk8f6rYLuK-3yKPvJWx0AV8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013515450561-om1e5pul56jjuaun580gpf4o4esmr8nv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
