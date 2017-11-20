@@ -3,7 +3,11 @@ package com.diegoalvis.android.sicor
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MenuItem
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.iid.FirebaseInstanceIdService
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -21,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupViewPager(viewPager)
+
+        Log.d("Alvis", "Refreshed token: " + FirebaseInstanceId.getInstance().token)
+        FirebaseMessaging.getInstance().subscribeToTopic("all")
 
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.getItemId()) {
